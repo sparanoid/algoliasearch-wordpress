@@ -6,15 +6,15 @@
 [context.production.environment]
   YARN_VERSION = "1.3.2"
   NODE_ENV = "production"
-  ROOT_PATH = "/wordpress"
+  ROOT_PATH = "/wordpress/"
 
 [context.deploy-preview.environment]
   YARN_VERSION = "1.3.2"
   NODE_ENV = "production"
-  ROOT_PATH = "/wordpress"
+  ROOT_PATH = "/wordpress/"
 
 [context.branch-deploy.environment]
   YARN_VERSION = "1.3.2"
   NODE_ENV = "production"
-  ROOT_PATH = "/wordpress"
+  ROOT_PATH = "/wordpress/"
   
