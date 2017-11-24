@@ -14,13 +14,14 @@ var headingsid  = require('metalsmith-headings-identifier');
 var file        = require('./plugins/file/index.js');
 var imagemin    = require('metalsmith-imagemin');
 var algoliaComponents = require('algolia-frontend-components');
-var webpack = require('metalsmith-webpack')
+var webpack = require('metalsmith-webpack');
+var path = require('path');
 
 var communityHeaderData = JSON.parse(fs.readFileSync('./component_data/communityHeader.json').toString());
 
 var sassPaths = [
-    'node_modules/foundation-sites/scss',
-    'node_modules/algolia-components/dist/communityHeader.css'
+    path.join(__dirname, '..', 'node_modules/foundation-sites/scss'),
+    path.join(__dirname, '..', 'node_modules/algolia-components/dist/communityHeader.css')
 ];
 
 console.log(process.env['ROOT_PATH'] ? process.env['ROOT_PATH'] : '/');
