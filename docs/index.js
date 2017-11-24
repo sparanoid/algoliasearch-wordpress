@@ -23,6 +23,8 @@ var sassPaths = [
     'node_modules/algolia-components/dist/communityHeader.css'
 ];
 
+console.log(process.env['ROOT_PATH'] ? process.env['ROOT_PATH'] : '/');
+
 var siteBuild = Metalsmith(__dirname)
     // Allow for relative url generation.
     .metadata({
@@ -31,7 +33,8 @@ var siteBuild = Metalsmith(__dirname)
         version: '2.8.1',
         time: new Date().getTime(),
         tweets:['666409672006606848','675635141713248256','684325213329305600','669552193419259904','672084577805012992','714625225359425536','669555344725696512','688027404741308417','783838738791227392','782584336323227648','787040561215582208','698839453469544448','687060441881796608','705467858961223680','665028633048821760','654785137272459265','661567388983279617','708574926962294784','707863195025858560'],
-        header: algoliaComponents.communityHeader(communityHeaderData)
+        header: algoliaComponents.communityHeader(communityHeaderData),
+        rootPath: process.env.ROOT_PATH || '/'
     })
 
     .source('./src')
@@ -84,9 +87,6 @@ var siteBuild = Metalsmith(__dirname)
 
     .use(headingsid())
 
-    // Inject rootPath in every file metadata to be able to make all urls relative.
-    // Allows to deploy the website in a directory.
-    .use(rootPath())
 
     .use(layouts({
         engine: 'handlebars',
