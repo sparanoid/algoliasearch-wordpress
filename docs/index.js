@@ -20,7 +20,7 @@ var path = require('path');
 var communityHeaderData = JSON.parse(fs.readFileSync('./component_data/communityHeader.json').toString());
 
 var sassPaths = [
-    path.join(__dirname, '..', 'node_modules/foundation-sites/scss')
+    path.join(__dirname, 'node_modules/foundation-sites/scss')
 ];
 
 var siteBuild = Metalsmith(__dirname)
