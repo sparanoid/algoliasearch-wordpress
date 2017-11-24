@@ -21,10 +21,8 @@ var communityHeaderData = JSON.parse(fs.readFileSync('./component_data/community
 
 var sassPaths = [
     path.join(__dirname, '..', 'node_modules/foundation-sites/scss'),
-    path.join(__dirname, '..', 'node_modules/algolia-components/dist/communityHeader.css')
+    path.join(__dirname, '..', 'node_modules/algolia-components/dist')
 ];
-
-console.log(process.env['ROOT_PATH'] ? process.env['ROOT_PATH'] : '/');
 
 var siteBuild = Metalsmith(__dirname)
     // Allow for relative url generation.
