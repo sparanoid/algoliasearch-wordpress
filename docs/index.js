@@ -21,7 +21,7 @@ var communityHeaderData = JSON.parse(fs.readFileSync('./component_data/community
 
 var sassPaths = [
     path.join(__dirname, '..', 'node_modules/foundation-sites/scss'),
-    path.join(__dirname, '..', 'node_modules/algolia-components/dist')
+    path.join(__dirname, '..', '')
 ];
 
 var siteBuild = Metalsmith(__dirname)
@@ -62,6 +62,11 @@ var siteBuild = Metalsmith(__dirname)
     .use(asset({
         src: './node_modules/algolia-frontend-components/dist/_communityHeader.js',
         dest: './js/communityHeader.js'
+    }))
+
+    .use(asset({
+      src: './node_modules/algolia-components/dist/communityHeader.css',
+      dest: './css/communityHeader.css'
     }))
 
     .use(imagemin({
